@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: ./server/authentication-service/Dockerfile-dev
     container_name: authentication-service-container
-    restart: always
+    # restart: always
     depends_on:
       - mysql-db
       - redis-cache
@@ -57,7 +57,7 @@ services:
       context: .
       dockerfile: ./server/common-data-service/Dockerfile-dev
     container_name: common-data-service-container
-    restart: always
+    # restart: always
     depends_on:
       - mysql-db
       - redis-cache
@@ -88,7 +88,7 @@ services:
       context: .
       dockerfile: ./server/search-suggestion-service/Dockerfile-dev
     container_name: search-suggestion-service-container
-    restart: always
+    # restart: always
     depends_on:
       - mysql-db
       - redis-cache
@@ -112,7 +112,7 @@ services:
       context: .
       dockerfile: ./server/payment-service/Dockerfile-dev
     container_name: payment-service-container
-    restart: always
+    # restart: always
     depends_on:
       - mysql-db
       - redis-cache
@@ -140,7 +140,7 @@ services:
       dockerfile: ./client/Dockerfile
     container_name: react-service-container
     stdin_open: true
-    restart: always
+#    restart: always
     expose:
       - ${REACT_APP_PORT}
     ports:
